@@ -1,0 +1,23 @@
+{
+  "name": "talent",
+  "authors": [
+    "Michael Mead <michaelmead007@icloud.com>"
+  ],
+  "description": "A musician discovery tool for Nashville.",
+  "main": "",
+  "keywords": [
+    "music",
+    "talent",
+    "discover",
+    "Nashville"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
