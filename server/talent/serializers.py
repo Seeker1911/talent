@@ -6,17 +6,22 @@ from talent.models import *
 class MusiciansSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Musicians
-        fields = ('url', 'name', 'email', 'phone', 'social', 'genre', 'songs')
+        fields = ('url', 'phone', 'social', 'genre', 'songs', 'company', 'engineering', 'artistDevelopment', 'bio', 'location')
 
-class Talent_managementSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Talent_management
-        fields = ('url', 'name', 'email', 'phone', 'social', 'genre', 'musicians', 'company', 'artistDevelopment')
+class UserSerializer(serializers.HyperlinkedModelSerializer):
 
-class ProductionSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Production
-        fields = ('url', 'name', 'email', 'phone', 'social', 'genre', 'musicians', 'company', 'engineering')
+        model = User
+        fields = ('id', 'url', 'username', 'first_name', 'last_name')
+# class Talent_managementSerializer(serializers.HyperlinkedModelSerializer):
+#     class Meta:
+#         model = Talent_management
+#         fields = ('url', 'username', 'user_id', 'email', 'phone', 'social', 'genre', 'artists', 'company', 'artistDevelopment')
+#
+# class ProductionSerializer(serializers.HyperlinkedModelSerializer):
+#     class Meta:
+#         model = Production
+#         fields = ('url', 'username', 'user_id', 'email', 'phone', 'social', 'genre', 'artists', 'company', 'engineering')
 
 class EventSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -25,11 +30,11 @@ class EventSerializer(serializers.HyperlinkedModelSerializer):
 
 class SongSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Songs
-        fields = ('owner', 'name', 'email', 'phone', 'social', 'genre', 'location', 'musician')
+        model = Song
+        fields = ('artist', 'title', 'genre', 'length')
 
-class UserSerializer(serializers.HyperlinkedModelSerializer):
-
-    class Meta:
-        model = User
-        fields = ('id', 'url', 'username')
+# class UserSerializer(serializers.HyperlinkedModelSerializer):
+#
+#     class Meta:
+#         model = User
+#         fields = ('id', 'url', 'username')

@@ -4,11 +4,12 @@ from . import views
 
 router = routers.DefaultRouter()
 router.register(r'Musicians', views.MusiciansView)
-router.register(r'Talent_management', views.Talent_managementView)
-router.register(r'Production', views.ProductionView)
+# router.register(r'Talent_management', views.Talent_managementView)
+# router.register(r'Production', views.ProductionView)
 router.register(r'Events', views.EventView)
-router.register(r'users', views.UserList)
+# router.register(r'users', views.UserList)
 router.register(r'Songs', views.SongList)
+router.register(r'Users', views.UserList)
 
 
 
