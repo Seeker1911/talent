@@ -32,9 +32,3 @@ class SongSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Song
         fields = ('artist', 'title', 'genre', 'length')
-
-# class UserSerializer(serializers.HyperlinkedModelSerializer):
-#
-#     class Meta:
-#         model = User
-#         fields = ('id', 'url', 'username')

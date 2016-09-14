@@ -17,7 +17,7 @@ angular.module('talent')
       })
 
     user.newMusician = function () {
-      $http.post("http://localhost:8000/talent/Musicians/", {name: user.name, year_began: user.yearBegan, members: user.members})
+      $http.post("http://localhost:8000/Musicians/", {name: user.name, year_began: user.yearBegan, members: user.members})
       .then(res => {
         // getArtistList()
         user.name = '';

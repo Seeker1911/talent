@@ -26,7 +26,7 @@ class MusiciansView(viewsets.ModelViewSet):
     serializer_class = MusiciansSerializer
 
 
-class UserList(viewsets.ModelViewSet):
+class UserView(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
@@ -49,11 +49,7 @@ class EventView(viewsets.ModelViewSet):
     queryset = Events.objects.all()
     serializer_class = EventSerializer
 
-# class UserList(viewsets.ModelViewSet):
-#     queryset = User.objects.all()
-#     serializer_class = UserSerializer
-
-class SongList(viewsets.ModelViewSet):
+class SongView(viewsets.ModelViewSet):
     model = Song
     queryset = Song.objects.all()
     serializer_class = SongSerializer
