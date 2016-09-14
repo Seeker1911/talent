@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/main.css" media="screen" title="no title">
+    <link rel="stylesheet" href="css/header-login-signup.css" media="screen" title="no title">
+    <title>Talent</title>
+  </head>
+
+  <body>
+    <div ng-app="talent">
+      <!-- Header -->
+      <header class="header-login-signup">
+	       <div class="header-limiter">
+          <h1><a href="#">Nashville<span>Talent</span></a></h1>
+		      <nav>
+			      <a href="#">Link</a>
+			      <a href="#" class="selected">Link</a>
+			      <a href="#">Link</a>
+		      </nav>
+      		<ul>
+      			<li><a href="#/login">Login</a></li>
+      			<li><a href="#/signup">Sign up</a></li>
+      		</ul>
+	       </div>
+      </header>
+      <!-- view partials -->
+      <div ng-view> </div>
+
+    </div>
+
+
+
+
+
+
+    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-filter/dist/angular-filter.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <!-- <script type="text/javascript" src="login/login.js"></script>
+    <script type="text/javascript" src="signup/signup.js"></script> -->
+    <script type="text/javascript" src="auth/auth.config.js"></script> -->
+    <script type="text/javascript" src="auth/authCtrl.js"></script> -->
+
+  </body>
+</html>

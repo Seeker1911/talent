@@ -4,7 +4,7 @@
     "Michael Mead <michaelmead007@icloud.com>"
   ],
   "description": "A musician discovery tool for Nashville.",
-  "main": "",
+  "main": "app.js",
   "keywords": [
     "music",
     "talent",
