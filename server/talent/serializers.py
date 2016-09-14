@@ -1,4 +1,5 @@
 from rest_framework import serializers
+from django.contrib.auth.models import User
 from talent.models import *
 
 # Turns Python models into JSON and vice versa
@@ -21,3 +22,14 @@ class EventSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Events
         fields = ('url', 'name', 'email', 'phone', 'social', 'genre', 'location')
+
+class SongSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Songs
+        fields = ('owner', 'name', 'email', 'phone', 'social', 'genre', 'location', 'musician')
+
+class UserSerializer(serializers.HyperlinkedModelSerializer):
+
+    class Meta:
+        model = User
+        fields = ('id', 'url', 'username')
