@@ -18,7 +18,7 @@ angular.module('talent')
 
       $scope.register = function() {
         $http({
-          url: `${apiUrl}/register`,
+          url: `${apiUrl}/register/`,
           method: "POST",
           headers: {
             "Content-Type": "application/x-www-form-urlencoded"
@@ -28,10 +28,19 @@ angular.module('talent')
             "password": $scope.user.password,
             "email": $scope.user.email,
             "first_name": $scope.user.first_name,
-            "last_name": $scope.user.last_name
+            "last_name": $scope.user.last_name,
+            "phone": $scope.user.phone,
+            "social": $scope.user.social,
+            "genre": $scope.user.genre,
+            "company": $scope.user.company,
+            "engineering": $scope.user.engineering,
+            "artistDevelopment": $scope.user.artistDevelopment,
+            "bio": $scope.user.bio,
+            "location": $scope.user.location
           }
         }).success(res => {
           if (res.success) {
+            console.log("Registered");
             $location.path('/');
           }
         }).error(console.error);
@@ -42,7 +51,7 @@ angular.module('talent')
        */
       $scope.login = function() {
         $http({
-          url: `${apiUrl}/login`,
+          url: `${apiUrl}/login/`,
           method: "POST",
           headers: {
             "Content-Type": "application/x-www-form-urlencoded"
@@ -53,6 +62,7 @@ angular.module('talent')
           }
         }).success(res => {
           if (res.success) {
+            console.log('Success')
             /*
             Login was successful, store credentials for use in requests
             to API that require permissions
@@ -62,7 +72,7 @@ angular.module('talent')
               password: $scope.user.password
             });
 
-            // Redirect to new ticket form on successful login
+            // Redirect on successful login
             $location.path('index.html');
           }
         }).error(console.error);
