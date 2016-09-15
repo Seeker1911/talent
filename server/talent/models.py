@@ -7,14 +7,14 @@ from django.db.models.signals import post_save
 # musicians can only have one manager and one producer
 class Musicians(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, default=None)
-    phone = PhoneNumberField(blank=True)
-    social = models.CharField(max_length=200, default=0)
-    genre = models.CharField(max_length=200, default=0)
-    company = models.CharField(max_length=200, default=0)
+    phone = models.CharField(max_length=15, null=True)
+    social = models.CharField(max_length=200, blank=True, null=True)
+    genre = models.CharField(max_length=200, blank=True ,null=True)
+    company = models.CharField(max_length=200, blank=True, null=True)
     engineering = models.BooleanField(default=False)
     artistDevelopment = models.BooleanField(default=False)
-    bio = models.TextField(max_length=500, blank=True)
-    location = models.CharField(max_length=30, blank=True)
+    bio = models.TextField(max_length=500, blank=True ,null=True)
+    location = models.CharField(max_length=30, blank=True, null=True)
 
     def __str__(self):
         return self.user.last_name
@@ -62,5 +62,3 @@ class Song(models.Model):
 
     class Meta:
         ordering = ('title',)
-
-        

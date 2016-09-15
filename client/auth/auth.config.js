@@ -6,5 +6,9 @@ angular.module('talent')
       .when('/login', {
         controller: 'LoginController',
         templateUrl: 'auth/login.html'
+      })
+      .when('/register', {
+        controller: 'LoginController',
+        templateUrl: 'auth/register.html'
       });
   })
