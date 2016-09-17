@@ -1,4 +1,4 @@
-angular.module('talent', ['ngRoute', 'ui.bootstrap'])
+angular.module('talent')
   .config(($routeProvider) => (
     $routeProvider
     .when('/landing', {
