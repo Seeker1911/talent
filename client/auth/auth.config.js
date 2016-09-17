@@ -1,5 +1,3 @@
-'use strict'
-
 angular.module('talent')
   .config($routeProvider => {
     $routeProvider
