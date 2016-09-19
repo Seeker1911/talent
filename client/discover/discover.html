@@ -1,13 +1,17 @@
 <div class="container">
   <div class="row">
     <h1>Discover</h1>
-    <div ng-repeat='artist in artists' class="col-sm-8 col-sm-offset-2">
-      <h3>{{artist.name}}</h3>
-      <p>{{artist.genre}}</p>
-      <p>{{artist.location}}</p>
-      <p>{{artist.email}}</p>
+    <div ng-repeat="artist in artists | filter:{artist: '!null'}" class="col-sm-8 col-sm-offset-2">
+      <p>ARTIST</p>
       <p>{{artist.phone}}</p>
       <p>{{artist.social}}</p>
+      <p>{{artist.genre}}</p>
+      <p>{{artist.songs}}</p>
+      <p>{{artist.company}}</p>
+      <p>{{artist.engineering}}</p>
+      <p>{{artist.artistDevelopment}}</p>
+      <p>{{artist.bio}}</p>
+      <p>{{artist.location}}</p>
     </div>
 
   </div>
