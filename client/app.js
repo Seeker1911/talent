@@ -33,6 +33,9 @@ app.factory('RootFactory', [
                         return false;
                     }
                 }
+            },
+            getUserName() {
+              return userCredentials.username;
             }
         }
     }

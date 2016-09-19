@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <h1>Profile</h1>
+      <p>{{artist.user.username}}</p>
+      <p>{{artist.user.first_name}}</p>
+      <p>{{artist.user.last_name}}</p>
+      <p>{{artist.bio}}</p>
+      <p>{{artist.phone}}</p>
+      <p>{{artist.social}}</p>
+      <p>{{artist.genre}}</p>
+      <p ng-if="artist.company !== '0'">{{artist.company}}</p>
+      <p>{{artist.location}}</p>
+      <p ng-if="artist.engineering">Engineer</p>
+      <p ng-if="artist.artistDevelopment">Artist Development</p>
+      <p ng-repeat="song in artist.songs"><a href={{song}}>{{song}}</a></p>
+
+    </div>
+  </div>
+</div>

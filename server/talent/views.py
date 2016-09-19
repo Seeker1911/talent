@@ -103,14 +103,14 @@ def register_user(request):
                     last_name=req_body['last_name'],
                     )
 
-    new_user.musicians.phone=req_body['phone']
-    new_user.musicians.social=req_body['social']
-    new_user.musicians.genre=req_body['genre']
-    new_user.musicians.company=req_body['company']
-    new_user.musicians.engineering=req_body['engineering']
-    new_user.musicians.artistDevelopment=req_body['artistDevelopment']
-    new_user.musicians.bio=req_body['bio']
-    new_user.musicians.location=req_body['location']
+    new_user.musicians.phone=req_body.get('phone', None)
+    new_user.musicians.social=req_body.get('social', None)
+    new_user.musicians.genre=req_body.get('genre', None)
+    new_user.musicians.company=req_body.get('company', None)
+    new_user.musicians.engineering=req_body.get('engineering', False)
+    new_user.musicians.artistDevelopment=req_body.get('artistDevelopment', False)
+    new_user.musicians.bio=req_body.get('bio', None)
+    new_user.musicians.location=req_body.get('location', None)
 
 
     # Commit the user to the database by saving it
