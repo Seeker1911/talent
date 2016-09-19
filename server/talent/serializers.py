@@ -3,16 +3,19 @@ from django.contrib.auth.models import User
 from talent.models import *
 
 # Turns Python models into JSON and vice versa
-class MusiciansSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Musicians
-        fields = ('url', 'phone', 'social', 'genre', 'songs', 'company', 'engineering', 'artistDevelopment', 'bio', 'location')
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = User
         fields = ('id', 'url', 'username', 'first_name', 'last_name')
+
+class MusiciansSerializer(serializers.HyperlinkedModelSerializer):
+    user = UserSerializer()
+    class Meta:
+        model = Musicians
+        fields = ('id', 'user','url', 'phone', 'social', 'genre', 'songs', 'company', 'engineering', 'artistDevelopment', 'bio', 'location')
+
 # class Talent_managementSerializer(serializers.HyperlinkedModelSerializer):
 #     class Meta:
 #         model = Talent_management

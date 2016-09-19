@@ -41,7 +41,7 @@ angular.module('talent')
         }).success(res => {
           if (res.success) {
             console.log("Registered");
-            $location.path('/');
+            $location.path('/discover');
           }
         }).error(console.error);
       };
@@ -73,7 +73,7 @@ angular.module('talent')
             });
 
             // Redirect on successful login
-            $location.path('index.html');
+            $location.path('/discover');
           }
         }).error(console.error);
       };

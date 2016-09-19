@@ -1,17 +1,23 @@
 <div class="container">
   <div class="row">
     <h1>Discover</h1>
-    <div ng-repeat="artist in artists | filter:{artist: '!null'}" class="col-sm-8 col-sm-offset-2">
+    <div ng-repeat="artist in artists" class="col-sm-8 col-sm-offset-2">
+      <a href="#/artist/{{artist.id}}">
       <p>ARTIST</p>
-      <p>{{artist.phone}}</p>
-      <p>{{artist.social}}</p>
-      <p>{{artist.genre}}</p>
-      <p>{{artist.songs}}</p>
-      <p>{{artist.company}}</p>
-      <p>{{artist.engineering}}</p>
-      <p>{{artist.artistDevelopment}}</p>
-      <p>{{artist.bio}}</p>
-      <p>{{artist.location}}</p>
+      <p>username: {{artist.user.username}}</p>
+      <p>firstname: {{artist.user.first_name}}</p>
+      <p>lastname: {{artist.user.last_name}}</p>
+
+      <p>phone: {{artist.phone}}</p>
+      <p>social: {{artist.social}}</p>
+      <p>genre: {{artist.genre}}</p>
+      <p ng-repeat="song in artist.songs"><a href={{song}}>{{song}}</a></p>
+      <p ng-if="artist.company !== '0'">{{artist.company}}</p>
+      <p ng-if="artist.engineering">Engineer</p>
+      <p ng-if="artist.artistDevelopment">Artist Development</p>
+      <p>bio: {{artist.bio}}</p>
+      <p>location: {{artist.location}}</p>
+      </a>
     </div>
 
   </div>

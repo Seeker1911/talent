@@ -5,5 +5,4 @@ angular.module('talent')
        .then((res) => $scope.events = res.data)
 
 
-
 })
