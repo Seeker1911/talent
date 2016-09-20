@@ -11,8 +11,18 @@ angular.module('talent')
            return musician.user.username === user
          })
          console.log('musician', $scope.musician);
-       });
+       }).then(() => {
+         for(let i = 0; i <= $scope.musician[0].songs.length; i++) {
+           $http.get($scope.musician[0].songs[i])
+            .then(res => $scope.musician[0].songs[i] = res.data)
+         }
+       })
 
+  // $http.get('http://localhost:8000/Songs')
+  //   .then((res)=>{
+  //     console.log('songs res.data:', res.data);
+  //     $scope.songs = res.data;
+  //   })
 
 
 })
