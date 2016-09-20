@@ -1,7 +1,7 @@
 angular.module('talent')
   .config(($routeProvider) => (
     $routeProvider
-    .when('/landing', {
+    .when('/', {
         templateUrl: 'landingPage/landingPage.html',
         controller: 'LandingController',
       })))

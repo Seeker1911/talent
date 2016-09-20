@@ -11,8 +11,11 @@ angular.module('talent')
            return musician.user.username === user
          })
          console.log('musician', $scope.musician);
-       }).then(() => {
-         for(let i = 0; i <= $scope.musician[0].songs.length; i++) {
+        //  Return musician sub 0 cuz theres only one user here anyway.
+         return $scope.musician[0]
+       })
+       .then(() => {
+         for(let i = 0; i < $scope.musician[0].songs.length; i++) {
            $http.get($scope.musician[0].songs[i])
             .then(res => $scope.musician[0].songs[i] = res.data)
          }

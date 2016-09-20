@@ -1,5 +1,13 @@
 'use strict'
-
+var config = {
+   apiKey: "AIzaSyAav7EOX67IV25U6-PKHldUy8tGYW6hcuE",
+   authDomain: "talent-31556.firebaseapp.com",
+   databaseURL: "https://talent-31556.firebaseio.com",
+   storageBucket: "",
+   messagingSenderId: "503379600864"
+ };
+ firebase.initializeApp(config);
+ 
 const app = angular.module('talent', ['ngRoute', 'ui.bootstrap'])
 app.constant('apiUrl', "http://localhost:8000")
 
