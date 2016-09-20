@@ -13,9 +13,12 @@
       <p>{{music.location}}</p>
       <p ng-if="music.engineering">Engineer</p>
       <p ng-if="music.artistDevelopment">Artist Development</p>
-      <p ng-repeat="song in music.songs">{{song.title}}</p>
-      <p ng-repeat="song in music.songs">{{song.genre}}</p>
-      <p ng-repeat="song in music.songs">{{song.length}}</p>
+      <div ng-repeat="song in music.songs" class="">
+        <p >{{song.title}}</p>
+        <p >{{song.genre}}</p>
+        <p >{{song.length}}</p>
+
+      </div>
 
     </div>
   </div>

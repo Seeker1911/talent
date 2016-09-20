@@ -1,23 +1,36 @@
 <div class="container">
-  <div class="row">
-    <h1>Discover</h1>
-    <div ng-repeat="artist in artists" class="col-sm-8 col-sm-offset-2">
-      <a href="#/artist/{{artist.id}}">
-      <p>ARTIST</p>
-      <p>username: {{artist.user.username}}</p>
-      <p>firstname: {{artist.user.first_name}}</p>
-      <p>lastname: {{artist.user.last_name}}</p>
+  <h1>Discover</h1>
+  <div ng-repeat="artist in artists" class="row">
+    <div class="col-sm-8 col-sm-offset-2 discover">
+      <div class="row">
+        <div class="col-xs-4">
+          <a href="#/artist/{{artist.id}}">
+            <p> {{artist.user.username}}</p>
+            <p> {{artist.user.first_name}}</p>
+            <p> {{artist.user.last_name}}</p>
+            <p> {{artist.phone}}</p>
+            <p> {{artist.social}}</p>
+            <p> {{artist.genre}}</p>
+          </a>
+        </div>
+        <div class="col-xs-4">
 
-      <p>phone: {{artist.phone}}</p>
-      <p>social: {{artist.social}}</p>
-      <p>genre: {{artist.genre}}</p>
-      <p ng-repeat="song in artist.songs"><a href={{song}}>{{song}}</a></p>
-      <p ng-if="artist.company !== '0'">{{artist.company}}</p>
-      <p ng-if="artist.engineering">Engineer</p>
-      <p ng-if="artist.artistDevelopment">Artist Development</p>
-      <p>bio: {{artist.bio}}</p>
-      <p>location: {{artist.location}}</p>
-      </a>
+        </div>
+        <div class="col-xs-4">
+          <!-- <p ng-repeat="song in artist.songs"><a href={{song}}>{{song}}</a></p> -->
+          <div ng-repeat="song in artist.songs" class="">
+            <p >{{song.title}}</p>
+            <p >{{song.genre}}</p>
+            <p >{{song.length}}</p>
+
+          </div>
+          <p ng-if="artist.company !== '0'">{{artist.company}}</p>
+          <p ng-if="artist.engineering">Engineer</p>
+          <p ng-if="artist.artistDevelopment">Artist Development</p>
+          <p class='discoverBio'> {{artist.bio}}</p>
+          <p class='discoverBio'> {{artist.location}}</p>
+        </div>
+      </div>
     </div>
 
   </div>
