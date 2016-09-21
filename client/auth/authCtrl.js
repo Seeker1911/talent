@@ -17,6 +17,15 @@ angular.module('talent')
 
 
       $scope.register = function() {
+        let input = document.querySelector('[type="file"]');
+        let image_file = input.files[0];
+
+        let randomInteger = Math.random() * 1e17;
+        let getFileExtension = image_file.type.split('/').slice(-1)[0];
+        let randomPath = `${randomInteger}.${getFileExtension}`;
+
+        firebase.storage().ref().child(randomPath).put(image_file)
+            .then((res) => {
         $http({
           url: `${apiUrl}/register/`,
           method: "POST",
@@ -36,7 +45,8 @@ angular.module('talent')
             "engineering": $scope.user.engineering,
             "artistDevelopment": $scope.user.artistDevelopment,
             "bio": $scope.user.bio,
-            "location": $scope.user.location
+            "location": $scope.user.location,
+            "image": res.downloadURL
           }
         }).success(res => {
           if (res.success) {
@@ -44,7 +54,7 @@ angular.module('talent')
             $location.path('/discover');
           }
         }).error(console.error);
-      };
+      });
 
       /*
         Post the user-provided credentials to API
@@ -79,4 +89,4 @@ angular.module('talent')
       };
 
     }
-]);
+}]);
