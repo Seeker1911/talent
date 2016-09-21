@@ -3,7 +3,7 @@
   <div ng-repeat="artist in artists" class="row">
     <div class="col-sm-8 col-sm-offset-2 discover">
       <div class="row">
-        <div class="col-xs-4">
+        <div class="col-xs-3">
           <a href="#/artist/{{artist.id}}">
             <p> {{artist.user.username}}</p>
             <p> {{artist.user.first_name}}</p>
@@ -13,10 +13,10 @@
             <p> {{artist.genre}}</p>
           </a>
         </div>
-        <div class="col-xs-4">
-
+        <div class="col-xs-6">
+          <img ng-src="{{artist.image}}" alt="profile photo" />
         </div>
-        <div class="col-xs-4">
+        <div class="col-xs-3">
           <!-- <p ng-repeat="song in artist.songs"><a href={{song}}>{{song}}</a></p> -->
           <div ng-repeat="song in artist.songs" class="">
             <p >{{song.title}}</p>
