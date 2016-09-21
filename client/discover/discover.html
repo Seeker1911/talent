@@ -1,36 +1,36 @@
 <div class="container">
   <div ng-repeat="artist in artists" class="row">
-    <div class="col-sm-8 col-sm-offset-2 discover">
+    <div class="col-sm-12 discover">
       <div class="row">
-        <div class="col-xs-3">
+        <div class="col-xs-3 co">
           <a href="#/artist/{{artist.id}}">
-            <p> {{artist.user.username}}</p>
             <p> {{artist.user.first_name}}</p>
             <p> {{artist.user.last_name}}</p>
             <p> {{artist.phone}}</p>
             <p> {{artist.social}}</p>
             <p> {{artist.genre}}</p>
-          </a>
+            <span class='text-muted'><p class=''> {{artist.location}}</p></span>
         </div>
-        <div class="col-xs-6">
-          <img ng-src="{{artist.image}}" alt="profile photo" />
+        <div class="col-xs-6 imgConstrain">
+          <p class='titleTag'> {{artist.user.username}}</p>
+          <img ng-src="{{artist.image}}" class='img-responsive img-rounded center-block'alt="profile photo" />
         </div>
         <div class="col-xs-3">
-          <!-- <p ng-repeat="song in artist.songs"><a href={{song}}>{{song}}</a></p> -->
-          <div ng-repeat="song in artist.songs" class="">
+          <!-- <div ng-repeat="song in artist.songs" class="">
             <p >{{song.title}}</p>
             <p >{{song.genre}}</p>
             <p >{{song.length}}</p>
 
-          </div>
-          <p ng-if="artist.company !== '0'">{{artist.company}}</p>
-          <p ng-if="artist.engineering">Engineer</p>
-          <p ng-if="artist.artistDevelopment">Artist Development</p>
-          <p class='discoverBio'> {{artist.bio}}</p>
-          <p class='discoverBio'> {{artist.location}}</p>
+          </div> -->
+          <p ng-if="artist.company !== '0'"><span class='text-muted'>{{artist.company}} </span></p>
+          <p ng-if="artist.engineering"><span class='text-muted'> Engineer</span></p>
+          <p ng-if="artist.artistDevelopment"><span class='text-muted'>Artist Development </span></p>
+          <p class=''> {{artist.bio}}</p>
         </div>
       </div>
+
     </div>
 
   </div>
+</a>
 </div>
