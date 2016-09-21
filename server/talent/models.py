@@ -15,6 +15,7 @@ class Musicians(models.Model):
     artistDevelopment = models.BooleanField(default=False)
     bio = models.TextField(max_length=500, blank=True ,null=True, default=None)
     location = models.CharField(max_length=30, blank=True, null=True, default=None)
+    image = models.CharField(max_length=30, blank=True, null=True, default=None)
 
     def __str__(self):
         return self.user.last_name
