@@ -3,6 +3,7 @@ from phonenumber_field.modelfields import PhoneNumberField
 from django.contrib.auth.models import User
 from django.dispatch import receiver
 from django.db.models.signals import post_save
+from django.utils.timezone import datetime
 
 # musicians can only have one manager and one producer
 class Musicians(models.Model):
@@ -42,6 +43,7 @@ class Events(models.Model):
     genre = models.CharField(max_length=200, default=0)
     location = models.CharField(max_length=200, default=0)
     musician = models.ManyToManyField(Musicians, related_name='events')
+    date = models.DateField(auto_now=False, auto_now_add=False, default=datetime.now)
 
     def __str__(self):
         return self.name

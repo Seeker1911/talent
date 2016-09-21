@@ -35,4 +35,4 @@ class MusiciansSerializer(serializers.HyperlinkedModelSerializer):
 class EventSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Events
-        fields = ('url', 'name', 'email', 'phone', 'social', 'genre', 'location')
+        fields = ('url', 'name', 'email', 'phone', 'social', 'genre', 'location', 'date')
