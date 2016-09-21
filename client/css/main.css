@@ -10,4 +10,24 @@
 
 img {
   width: 100%;
+  margin-top: 5px;
+}
+
+.songList {
+  border-bottom: 1px solid rgba(0, 0, 0, .5);
+  margin-top: 5px;
+}
+
+.songList p {
+  margin: 0;
+}
+
+.titleTag {
+  color: #5383d3;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.muted {
+  
 }
