@@ -10,8 +10,14 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
         model = User
         fields = ('id', 'url', 'username', 'first_name', 'last_name')
 
+class SongSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Song
+        fields = ('artist', 'title', 'genre', 'length')
+
 class MusiciansSerializer(serializers.HyperlinkedModelSerializer):
     user = UserSerializer()
+    songs = SongSerializer(many=True)
     class Meta:
         model = Musicians
         fields = ('id', 'user','url', 'phone', 'social', 'genre', 'songs', 'company', 'engineering', 'artistDevelopment', 'bio', 'location', 'image')
@@ -29,9 +35,4 @@ class MusiciansSerializer(serializers.HyperlinkedModelSerializer):
 class EventSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Events
-        fields = ('url', 'name', 'email', 'phone', 'social', 'genre', 'location')
-
-class SongSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Song
-        fields = ('artist', 'title', 'genre', 'length')
+        fields = ('url', 'name', 'email', 'phone', 'social', 'genre', 'location', 'date')

@@ -2,7 +2,7 @@
   <div class="row">
     <div ng-repeat='music in musician' class="col-sm-12 ">
       <div class="row">
-        <div class='col-xs-3'>
+        <div class='col-sm-4'>
           <p class='titleTag'>Profile</p>
           <p><span class='text-muted'>username: </span>{{music.user.username}}</p>
           <p><span class='text-muted'>Firstname: </span>{{music.user.first_name}}</p>
@@ -12,15 +12,15 @@
           <p ng-if="music.company !== '0'"><span class='text-muted'>Company: </span>{{music.company}}</p>
           <p><span class='text-muted'>Location: </span>{{music.location}}</p>
         </div>
-        <div class="col-xs-6">
-          <img ng-src="{{music.image}}" alt="profile photo" />
+        <div class="col-sm-4">
+          <img class='img-responsive center-block' ng-src="{{music.image}}" alt="profile photo" />
           <p class='titleTag'>Contact</p>
           <p><span class='text-muted'>Phone: </span>{{music.phone}}</p>
           <p><span class='text-muted'>Social: </span>{{music.social}}</p>
           <p ng-if="music.engineering">Engineer</p>
           <p ng-if="music.artistDevelopment">Artist Development</p>
         </div>
-        <div class="col-xs-3">
+        <div class="col-sm-4">
           <p class='titleTag'>Song List</p>
           <div ng-repeat="song in music.songs" class="songList">
             <p ><span class='text-muted'>Title: </span>{{song.title}}</p>
