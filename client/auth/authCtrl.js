@@ -55,11 +55,12 @@ angular.module('talent')
           }
         }).error(console.error);
       });
-
+}
       /*
         Post the user-provided credentials to API
        */
       $scope.login = function() {
+        console.log('Clicked log in');
         $http({
           url: `${apiUrl}/login/`,
           method: "POST",
@@ -88,5 +89,5 @@ angular.module('talent')
         }).error(console.error);
       };
 
-    }
+    // }
 }]);
