@@ -14,7 +14,7 @@ class MusiciansSerializer(serializers.HyperlinkedModelSerializer):
     user = UserSerializer()
     class Meta:
         model = Musicians
-        fields = ('id', 'user','url', 'phone', 'social', 'genre', 'songs', 'company', 'engineering', 'artistDevelopment', 'bio', 'location')
+        fields = ('id', 'user','url', 'phone', 'social', 'genre', 'songs', 'company', 'engineering', 'artistDevelopment', 'bio', 'location', 'image')
 
 # class Talent_managementSerializer(serializers.HyperlinkedModelSerializer):
 #     class Meta:

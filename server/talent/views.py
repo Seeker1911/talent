@@ -111,6 +111,7 @@ def register_user(request):
     new_user.musicians.artistDevelopment=req_body.get('artistDevelopment', False)
     new_user.musicians.bio=req_body.get('bio', None)
     new_user.musicians.location=req_body.get('location', None)
+    new_user.musicians.image=req_body.get('image', None)
 
 
     # Commit the user to the database by saving it
