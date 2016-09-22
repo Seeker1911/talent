@@ -1,25 +1,35 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-10 col-sm-offset-2">
+    <div class="col-sm-12">
       <div class="row">
-        <div class="col-sm-3">
+        <div class="col-sm-4">
+          <p class='titleTag'>Profile</p>
           <p>{{artist.user.username}}</p>
           <p>{{artist.user.first_name}}</p>
           <p>{{artist.user.last_name}}</p>
           <p>{{artist.bio}}</p>
-          <p>{{artist.phone}}</p>
-          <p>{{artist.social}}</p>
           <p>{{artist.genre}}</p>
           <p ng-if="artist.company !== '0'">{{artist.company}}</p>
           <p>{{artist.location}}</p>
-          <p ng-if="artist.engineering">Engineer</p>
-          <p ng-if="artist.artistDevelopment">Artist Development</p>
         </div>
-          <div class="col-sm-6">
-            <img ng-src="{{artist.image}}" alt="profile photo" />
-            <p ng-repeat="song in artist.songs"><a href={{song}}>{{song.title}}</a></p>
+          <div class="col-sm-4">
+            <img class='img-responsive img-rounded center-block' ng-src="{{artist.image}}" alt="profile photo" />
+            <p>{{artist.phone}}</p>
+            <p><a href="{{artist.social}}">{{artist.social}}</a></p>
+            <p ng-if="artist.engineering">Engineer</p>
+            <p ng-if="artist.artistDevelopment">Artist Development</p>
           </div>
-          <div class="col-sm-3">
+
+            <div class="col-sm-4">
+              <p class='titleTag'>Songs</p>
+
+            <!-- <p ng-repeat="song in artist.songs"><a href={{song}}>{{song.title}}</a></p> -->
+            <div ng-repeat="song in artist.songs" class="songList">
+              <p ><span class='text-muted'>Title: </span>{{song.title}}</p>
+              <p ><span class='text-muted'>Genre: </span>{{song.genre}}</p>
+              <p ><span class='text-muted'>Length: </span>{{song.length}}</p>
+            </div>
+
           </div>
       </div>
     </div>
