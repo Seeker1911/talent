@@ -13,17 +13,21 @@
   <body>
     <div ng-app="talent">
       <!-- Header -->
-      <header class="header-login-signup">
+      <header class="header-login-signup" ng-controller='headerCtrl'>
 	       <div class="header-limiter">
           <h1><a href="#/">Nashville<span>Talent</span></a></h1>
 		      <nav>
-			      <a class='selected' href="#/discover">Discover</a>
-			      <a href="#/events">Events</a>
-			      <a href="#/portfolio">Profile</a>
+			      <a ng-click='selected="discover"' ng-class='{selected: selected === "discover"}' href="#/discover">Discover</a>
+			      <a ng-click='selected="events"' ng-class='{selected: selected === "events"}' href="#/events">Events</a>
+			      <a ng-click='selected="portfolio"' ng-class='{selected: selected === "portfolio"}' href="#/portfolio">Profile</a>
 		      </nav>
-      		<ul>
+      		<ul ng-hide='loggedIn()'>
       			<li><a href="#/login">Login</a></li>
       			<li><a href="#/register">Sign up</a></li>
+      		</ul>
+          <ul ng-show='loggedIn()'>
+      			<li><a href="#/" ng-click='logout()'>Logout</a></li>
+      			<li><a href="#/" ng-click='event()'>create event</a></li>
       		</ul>
 	       </div>
       </header>
@@ -53,5 +57,6 @@
     <script type="text/javascript" src="profile/profile.config.js"></script>
     <script type="text/javascript" src="artist/artistCtrl.js"></script>
     <script type="text/javascript" src="artist/artist.config.js"></script>
+    <script type="text/javascript" src="headerCtrl.js"></script>
   </body>
 </html>
