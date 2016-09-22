@@ -2,6 +2,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth import logout, login, authenticate
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
+from django.http import HttpResponse
+from django.core import serializers
 
 import json
 
@@ -118,3 +120,49 @@ def register_user(request):
     new_user.save()
 
     return login_user(request)
+
+@csrf_exempt
+def register_event(request):
+    '''Handles the creation of a new event for authentication
+
+    Method arguments:
+      request -- The full HTTP request object
+    '''
+
+    # Load the JSON string of the request body into a dict
+    req_body = json.loads(request.body.decode())
+    print("REQ BODY: ", req_body)
+    # musician = Musicians.objects.get(pk=req_body["musician"])
+    # Create a new user by invoking the `create_user` helper method
+    # on Django's built-in User model
+    new_event = Events.objects.create(
+                    name=req_body['name'],
+                    email=req_body['email'],
+                    phone=req_body['phone'],
+                    social=req_body['social'],
+                    genre=req_body['genre'],
+                    location=req_body['location'],
+                    # musician=musician,
+                    date=req_body['date'],
+                    )
+
+    new_event.save()
+    # return new_event(request)
+    success = True
+    data = json.dumps({"success": success})
+    return HttpResponse(data, content_type='application/json')
+#
+#     success = True
+#     data = serializers.serialize("json", (new_event,))
+#     if new_event is not None:
+#     #     login(request=request, user=authenticated_user)
+#
+#         # Convert the authenticate user to a JSON object and send back in the reponse
+#         # data = serializers.serialize('json', (authenticated_user,), fields=('username', 'first_name', 'last_name', 'email'))
+#     else:
+#         success = False
+#         data = json.dumps(None)  # Send back null if user does not exist
+#
+#         return HttpResponse(data, content_type='application/json')
+# # Commit the event to the database by saving it
+#     new_event.save()
