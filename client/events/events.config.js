@@ -4,4 +4,9 @@ angular.module('talent')
     .when('/events', {
         templateUrl: 'events/events.html',
         controller: 'EventsController',
-      })))
+      })
+      .when('/createEvent', {
+          templateUrl: 'events/createEvent.html',
+          controller: 'EventsController',
+        })
+    ))

@@ -12,6 +12,7 @@
 
   <body>
     <div ng-app="talent">
+
       <!-- Header -->
       <header class="header-login-signup" ng-controller='headerCtrl'>
 	       <div class="header-limiter">
@@ -26,8 +27,8 @@
       			<li><a href="#/register">Sign up</a></li>
       		</ul>
           <ul ng-show='loggedIn()'>
-      			<li><a href="#/" ng-click='logout()'>Logout</a></li>
-      			<li><a href="#/" ng-click='event()'>create event</a></li>
+            <li><a href="#/" ng-click='logout()'>Logout</a></li>
+      			<li><a href='#/createEvent'>Create Event</a></li>
       		</ul>
 	       </div>
       </header>

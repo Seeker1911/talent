@@ -19,5 +19,6 @@ router.register(r'Users', views.UserView)
 urlpatterns = [
     url(r'^login/$', views.login_user, name='login'),
     url(r'^register/$', views.register_user, name='register_user'),
+    url(r'^events/$', views.register_event, name='register_event'),
     url(r'^', include(router.urls)),
 ]

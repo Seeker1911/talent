@@ -1,5 +1,5 @@
 angular.module('talent')
-.controller('headerCtrl', ['RootFactory', '$scope', function(RootFactory, $scope){
+.controller('headerCtrl', ['RootFactory', '$scope', '$location', function(RootFactory, $scope, $location){
   $scope.loggedIn = function(){
     return RootFactory.credentials()
   }
@@ -7,9 +7,9 @@ angular.module('talent')
     RootFactory.logout()
   }
 
-  $scope.event = function(){
-    
-  }
+  // $scope.event = function(){
+  //   $location.path('/createEvent')
+  // }
 
   $scope.selected = null;
 

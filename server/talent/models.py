@@ -43,7 +43,9 @@ class Events(models.Model):
     genre = models.CharField(max_length=200, blank=True, null=True, default=None)
     location = models.CharField(max_length=200, blank=True, null=True, default=None)
     musician = models.ManyToManyField(Musicians, related_name='events')
-    date = models.DateField(auto_now=False, auto_now_add=False, default=datetime.now)
+    # date = models.DateField(auto_now=False, auto_now_add=False)
+    date = models.CharField(max_length=200, blank=True, null=True, default=None)
+
 
     def __str__(self):
         return self.name
