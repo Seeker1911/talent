@@ -16,7 +16,7 @@ class Musicians(models.Model):
     artistDevelopment = models.BooleanField(default=False)
     bio = models.TextField(max_length=500, blank=True ,null=True, default=None)
     location = models.CharField(max_length=30, blank=True, null=True, default=None)
-    image = models.CharField(max_length=30, blank=True, null=True, default=None)
+    image = models.CharField(max_length=300, blank=True, null=True, default=None)
 
     def __str__(self):
         return self.user.last_name
@@ -38,10 +38,10 @@ def save_user_profile(sender, instance, **kwargs):
 class Events(models.Model):
     name = models.CharField(max_length=200)
     email = models.EmailField('email')
-    phone = PhoneNumberField(blank=True)
-    social = models.CharField(max_length=200, default=0)
-    genre = models.CharField(max_length=200, default=0)
-    location = models.CharField(max_length=200, default=0)
+    phone = PhoneNumberField(max_length=15, null=True, default=None)
+    social = models.CharField(max_length=200, blank=True, null=True, default=None)
+    genre = models.CharField(max_length=200, blank=True, null=True, default=None)
+    location = models.CharField(max_length=200, blank=True, null=True, default=None)
     musician = models.ManyToManyField(Musicians, related_name='events')
     date = models.DateField(auto_now=False, auto_now_add=False, default=datetime.now)
 
