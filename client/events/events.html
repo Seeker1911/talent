@@ -3,11 +3,12 @@
 
     <div ng-repeat='event in events' class="col-sm-8 col-sm-offset-2 events">
       <h3>{{event.name}}</h3>
-      <p>{{event.genre}}</p>
-      <p>{{event.location}}</p>
-      <p>{{event.email}}</p>
-      <p>{{event.phone}}</p>
-      <p>{{event.social}}</p>
+      <p><span class='text-muted'>Location: </span>{{event.location}}</p>
+      <p><span class='text-muted'>Date: </span>{{event.date}}</p>
+      <p><span class='text-muted'>Social: </span>{{event.social}}</p>
+      <p><span class='text-muted'>Genre: </span>{{event.genre}}</p>
+      <p><span class='text-muted'>Email: </span>{{event.email}}</p>
+      <p><span class='text-muted'>Phone: </span>{{event.phone}}</p>
     </div>
 
   </div>
