@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
   <div class='row'>
     <div class="col-sm-2">
     </div>
@@ -40,5 +40,116 @@
 </div>
 </div>
 </div>
-</div>
+</div> -->
 <!-- <button ng-click="login()">Login</button> -->
+<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="/css/register.css">
+
+		<!-- Website CSS style -->
+		<link rel="stylesheet" type="text/css" href="/css/main.css">
+
+		<!-- Website Font style -->
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+		<!-- Google Fonts -->
+		<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+
+</head>
+	<body>
+		<div class="container">
+			<div class="row main">
+				<div class="panel-heading">
+	               <div class="panel-title text-center">
+	               		<h1 class="title">Create Your Event</h1>
+	               		<hr />
+	               	</div>
+	            </div>
+				<div class="main-login main-center">
+					<form class="form-horizontal" method="post" action="#">
+
+						<div class="form-group">
+							<label for="name" class="cols-sm-2 control-label">The Event Name</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input ng-model='name' type="text" class="form-control" name="name" id="name"  placeholder="Enter the Name of the Event"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="email" class="cols-sm-2 control-label">Enter a Contact Email</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+									<input ng-model='email' type="text" class="form-control" name="email" id="email"  placeholder="Enter the Email"/>
+								</div>
+							</div>
+						</div>
+
+            <div class="form-group">
+              <label for="phone" class="cols-sm-2 control-label">Contact Phone Number</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-menu-right" aria-hidden="true"></i></span>
+                  <input ng-model='phone' type="tel" class="form-control" name="phone" id="phone"  placeholder="Enter the Contact Phone Number"/>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="social" class="cols-sm-2 control-label">Link to Social Network</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-menu-right" aria-hidden="true"></i></span>
+                  <input ng-model='social' type="text" class="form-control" name="social" id="social"  placeholder="Enter your Social Link"/>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="genre" class="cols-sm-2 control-label">The Events Genre</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-menu-right" aria-hidden="true"></i></span>
+                  <input ng-model='genre' type="text" class="form-control" name="genre" id="genre"  placeholder="Enter the Genre"/>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="location" class="cols-sm-2 control-label">The Location</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-menu-right" aria-hidden="true"></i></span>
+                  <input ng-model='location' type="text" class="form-control" name="location" id="location"  placeholder="Enter the Location here"/>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="date" class="cols-sm-2 control-label">What's the Date?</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-menu-right" aria-hidden="true"></i></span>
+                  <input ng-model='date' type="date" class="form-control" name="date" id="date"  placeholder="Enter the Date here"/>
+                </div>
+              </div>
+            </div>
+
+						<div class="form-group ">
+							<button ng-click='event()'type="button" class="btn btn-primary btn-lg btn-block login-button">Register Event</button>
+						</div>
+						<!-- <div class="login-register">
+				            <a href="index.php">Login</a>
+				         </div> -->
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="assets/js/bootstrap.js"></script>
+	</body>
+</html>
