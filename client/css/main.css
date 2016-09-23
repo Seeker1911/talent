@@ -1,3 +1,4 @@
+/*Discover page and Events page styling*/
 .discover, .events{
   color: #000;
   border-bottom: 1px solid rgba(0, 0, 0, .5);
@@ -11,6 +12,8 @@
 .img-responsive {
   max-height: 300px;
 }
+
+/*Discover and Profile page song list styles*/
 .songList {
   border-bottom: 1px solid rgba(0, 0, 0, .5);
   margin-top: 5px;
@@ -20,17 +23,19 @@
   margin: 0;
 }
 
+/*Generic styles for the section headers on multiple pages*/
 .titleTag {
   color: #5383d3;
   font-size: 2rem;
   text-align: center;
 }
 
+/* To help align photos and buttons with titleTag*/
 .registerPhoto {
   margin-top: 5px;
 }
 
 .registerBtn {
   margin-top: 5px;
-  
+
 }

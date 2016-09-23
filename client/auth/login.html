@@ -1,4 +1,4 @@
-<article>
+<!-- <article>
   <section>
     <div>Username</div>
     <input type="text" ng-model="user.username">
@@ -9,4 +9,20 @@
   </section>
 </article>
 
-<button ng-click="login()">Login</button>
+<button ng-click="login()">Login</button> -->
+
+
+
+<div class="container">
+<div class='col-sm-offset-4 col-sm-4'>
+<form class="form-signin">
+  <h2 class="form-signin-heading">Please sign in</h2>
+  <label for="inputEmail" class="sr-only">Email address</label>
+  <input type="text" id="inputEmail" class="form-control" placeholder="User Name" required="" autofocus="True" ng-model='user.username'>
+  <label for="inputPassword" class="sr-only">Password</label>
+  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="" ng-model='user.password'>
+
+  <button class="btn btn-lg btn-primary btn-block" ng-click="login()">Sign in</button>
+</form>
+</div>
+</div>
