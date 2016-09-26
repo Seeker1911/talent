@@ -37,7 +37,7 @@ def save_user_profile(sender, instance, **kwargs):
 class Events(models.Model):
     name = models.CharField(max_length=200)
     email = models.EmailField('email')
-    phone = PhoneNumberField(max_length=15, null=True, default=None)
+    phone = models.CharField(max_length=15, null=True, default=None)
     social = models.CharField(max_length=200, blank=True, null=True, default=None)
     genre = models.CharField(max_length=200, blank=True, null=True, default=None)
     location = models.CharField(max_length=200, blank=True, null=True, default=None)
