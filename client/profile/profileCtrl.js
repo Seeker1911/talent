@@ -1,7 +1,7 @@
 angular.module('talent')
-.controller('ProfileController', function($scope, $http, RootFactory) {
+.controller('ProfileController', function($scope, $http, apiUrl, RootFactory) {
   // Get the user page.
-  $http.get("http://localhost:8000/Musicians")
+  $http.get(`${apiUrl}/Musicians`)
        .then((res) => {
          console.log('res.data', res.data);
 

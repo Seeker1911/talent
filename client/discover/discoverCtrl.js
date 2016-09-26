@@ -1,7 +1,7 @@
 angular.module('talent')
-.controller('DiscoverController', function($scope, $http, $location) {
+.controller('DiscoverController', function($scope, $http, apiUrl, $location) {
   // Get all the musicians data.
-  $http.get("http://localhost:8000/Musicians")
+  $http.get(`${apiUrl}/Musicians`)
        .then((res) => {$scope.artists = res.data})
 
 })
