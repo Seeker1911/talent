@@ -16,7 +16,7 @@ class SongSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('artist', 'title', 'genre', 'length')
 
 class MusiciansSerializer(serializers.HyperlinkedModelSerializer):
-    user = UserSerializer()
+    user = UserSerializer(read_only=True)
     songs = SongSerializer(many=True)
     class Meta:
         model = Musicians
