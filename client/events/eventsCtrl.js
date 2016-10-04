@@ -1,7 +1,7 @@
 angular.module('talent')
 .controller('EventsController', function($scope, $http, apiUrl, $location) {
   // Get the events data.
-  $http.get("http://localhost:8000/Events")
+  $http.get(`${apiUrl}/Events`)
        .then((res) => $scope.events = res.data)
 
   //  user = RootFactory.getUserName()

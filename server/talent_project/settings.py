@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'a$%c4e&*o_^8+^v*d!3odv+t2nxe6*b%svcfi1b+uh*g)gv40_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.musiccitytalent.com', 'musiccitytalent.com']
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'corsheaders',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -60,9 +60,10 @@ MIDDLEWARE = [
 ]
 
 # Want cors origin to be False before deployment
-CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_ALLOW_ALL = False
 ROOT_URLCONF = 'talent_project.urls'
 CORS_ORIGIN_WHITELIST = (
+    'musiccitytalent.com',
     'localhost:8080' #Change to deployed site.
     )
 
@@ -133,3 +134,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')

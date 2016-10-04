@@ -1,5 +1,4 @@
 from django.db import models
-from phonenumber_field.modelfields import PhoneNumberField
 from django.contrib.auth.models import User
 from django.dispatch import receiver
 from django.db.models.signals import post_save
@@ -38,7 +37,7 @@ def save_user_profile(sender, instance, **kwargs):
 class Events(models.Model):
     name = models.CharField(max_length=200)
     email = models.EmailField('email')
-    phone = PhoneNumberField(max_length=15, null=True, default=None)
+    phone = models.CharField(max_length=15, null=True, default=None)
     social = models.CharField(max_length=200, blank=True, null=True, default=None)
     genre = models.CharField(max_length=200, blank=True, null=True, default=None)
     location = models.CharField(max_length=200, blank=True, null=True, default=None)

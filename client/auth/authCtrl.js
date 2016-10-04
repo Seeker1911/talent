@@ -89,5 +89,5 @@ angular.module('talent')
         }).error(console.error);
       };
 
-    // }
-}]);
+    }
+]);
