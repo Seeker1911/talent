@@ -9,7 +9,7 @@ var config = {
  firebase.initializeApp(config);
 
 const app = angular.module('talent', ['ngRoute', 'ui.bootstrap', 'ngCookies'])
-app.constant('apiUrl', "http://musiccitytalent.com:8080")
+app.constant('apiUrl', "http://musiccitytalent.com:8000")
 
 // app.config($httpProvider => {
 //     $httpProvider.defaults.xsrfCookieName = 'csrftoken';
