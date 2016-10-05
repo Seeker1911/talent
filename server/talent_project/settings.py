@@ -60,7 +60,7 @@ MIDDLEWARE = [
 ]
 
 # Want cors origin to be False before deployment
-CORS_ORIGIN_ALLOW_ALL = False
+CORS_ORIGIN_ALLOW_ALL = True
 ROOT_URLCONF = 'talent_project.urls'
 CORS_ORIGIN_WHITELIST = (
     'musiccitytalent.com',
