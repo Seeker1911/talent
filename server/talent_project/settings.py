@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'a$%c4e&*o_^8+^v*d!3odv+t2nxe6*b%svcfi1b+uh*g)gv40_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['.musiccitytalent.com', 'musiccitytalent.com']
+ALLOWED_HOSTS = ['http://localhost']
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
